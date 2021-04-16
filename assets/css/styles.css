@@ -75,3 +75,12 @@ a:active {
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.15);
     border-radius: 15px;
 }
+
+.monto-card{
+    font-size:2.5rem;
+    color: #354755;
+}
+.title-card{
+    font-size:3vh;
+
+}
