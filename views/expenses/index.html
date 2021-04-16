@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grupos</title>
+    <title>Gastos</title>
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../../assets/css/all.min.css" />
@@ -24,7 +24,6 @@
                 <a class="nav-link" href="../groups/">Grupos de gastos</a>
                 <a class="nav-link" href="../sub-groups/">Sub grupos de gastos</a>
                 <a class="nav-link" href="../expenses/">Gastos</a>
-
                 <a class="nav-link" href="#">Ingresos</a>
             </div>
         </div>
@@ -33,7 +32,7 @@
 
     <!-- Boton flotante -->
 
-    <a href="#" class="btn-flotante" data-toggle="modal" data-target="#nuevoGrupo">Nuevo grupo</a>
+    <a href="#" class="btn-flotante" data-toggle="modal" data-target="#nuevoGrupo">Nuevo Gasto</a>
 
     <!-- MODAL Nuevo Grupos-->
     <!-- Modal -->
@@ -41,7 +40,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Grupo</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Gasto</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -49,14 +48,50 @@
                 <div class="modal-body">
                     <form action="">
                         <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input class="form-control" type="text" id="name">
+                            <label for="group">Grupo</label>
+                            <select class="form-control" id="group"> 
+                                <option value="233432421">Educacion</option>
+                                <option value="233432421">Hogar</option>
+                            </select>
                         </div>
+                        <div class="form-group">
+                            <label for="group">Sub Grupo</label>
+                            <select class="form-control" id="group"> 
+                                <option value="233432421">Universidad</option>
+                                <option value="233432421">Casa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="group">Periodo</label>
+                            <select class="form-control" id="group"> 
+                                <option value="233432421">Una vez</option>
+                                <option value="233432421">Cada día</option>
+                                <option value="233432421">Cada semana</option>
+                                <option value="233432421">Cada Quincena</option>
+                                <option value="233432421">Cada Mes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input class="form-control " type="text" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Monto</label>
+                            <div class="form-group">
+                              <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text">Q</span>
+                                </div>
+                                <input type="number" class="form-control" >
+                           
+                              </div>
+                            </div>
+                          </div>
                         <div class="form-group">
                             <label for="description">Descripcion</label>
                             <input class="form-control" type="text" id="description">
                         </div>
-                        <button class="btn btn-primary text-center" type="submit">Guardar grupo</button>
+                        <button class="btn btn-primary text-center" type="submit">Guardar Sub grupo</button>
                     </form>
                 </div>
 
@@ -68,13 +103,14 @@
     <!-- ---------- -->
     <br /><br /><br /><br /><br />
     <div class="container">
-        <h2 class="text-center">Grupos de gastos</h2>
+        <h2 class="text-center">Sub Grupos de gastos</h2>
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="fondo-tabla p-3">
                     <table class="table">
                         <thead>
                             <tr>
+                                <th scope="col">Grupo</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Descripción</th>
                                 <th scope="col"></th>
@@ -83,20 +119,24 @@
                         <tbody>
                             <tr>
                                 <td>Educación</td>
+                                <td>Universidad</td>
                                 <td>Gastos relacionados con educación</td>
-                                <td><a class="btn btn-primary btn-sm">Editar</a></td>
+                                <td><a href="#" class="btn btn-primary btn-sm">Editar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Educación</td>
+                                <td>Universidad</td>
+                                <td>Gastos relacionados con educación</td>
+                                <td><a href="#" class="btn btn-primary btn-sm">Editar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Educación</td>
+                                <td>Universidad</td>
+                                <td>Gastos relacionados con educación</td>
+                                <td><a href="#" class="btn btn-primary btn-sm">Editar</a></td>
                             </tr>
 
-                            <tr>
-                                <td>Educación</td>
-                                <td>Gastos relacionados con educación</td>
-                                <td><a class="btn btn-primary btn-sm">Editar</a></td>
-                            </tr>
-                            <tr>
-                                <td>Educación</td>
-                                <td>Gastos relacionados con educación</td>
-                                <td><a class="btn btn-primary btn-sm">Editar</a></td>
-                            </tr>
+                           
 
                         </tbody>
                     </table>
