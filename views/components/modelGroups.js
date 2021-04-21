@@ -11,18 +11,24 @@ export default class ModelGroups extends General {
         return this.urlApi + this.url
     }
 
-    getAll() {
-        fetch(this.getApi(), {
+    async getAll() {
+        var r = await fetch(this.getApi(), {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                 },
             })
-            .then((response) => response.json())
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Request failed!');
+            }, networkError => console.log(networkError.message))
             .then((data) => {
-                console.log(data.body);
                 return data
             });
+
+        return r;
     }
 
 }
