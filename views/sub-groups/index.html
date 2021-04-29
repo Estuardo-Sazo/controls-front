@@ -33,11 +33,11 @@
 
     <!-- Boton flotante -->
 
-    <a href="#" class="btn-flotante" data-toggle="modal" data-target="#nuevoGrupo">Nuevo Subgrupo</a>
+    <a href="#" class="btn-flotante" data-toggle="modal" data-target="#Modal">Nuevo Subgrupo</a>
 
     <!-- MODAL Nuevo Grupos-->
     <!-- Modal -->
-    <div class="modal fade" id="nuevoGrupo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -48,11 +48,9 @@
                 </div>
                 <div class="modal-body">
                     <form action="">
-                        <div class="form-group">
+                        <div class="frm-subgroup">
                             <label for="group">Grupo</label>
                             <select class="form-control" id="group"> 
-                                <option value="233432421">Universidad</option>
-                                <option value="233432421">Casa</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -88,26 +86,8 @@
                                 <th scope="col"></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Educación</td>
-                                <td>Universidad</td>
-                                <td>Gastos relacionados con educación</td>
-                                <td><a href="#" class="btn btn-primary btn-sm">Editar</a></td>
-                            </tr>
-                            <tr>
-                                <td>Educación</td>
-                                <td>Universidad</td>
-                                <td>Gastos relacionados con educación</td>
-                                <td><a href="#" class="btn btn-primary btn-sm">Editar</a></td>
-                            </tr>
-                            <tr>
-                                <td>Educación</td>
-                                <td>Universidad</td>
-                                <td>Gastos relacionados con educación</td>
-                                <td><a href="#" class="btn btn-primary btn-sm">Editar</a></td>
-                            </tr>
-
+                        <tbody id="lista">
+                         
                            
 
                         </tbody>
@@ -120,8 +100,8 @@
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/popper.min.js"></script>
     <script src="../../assets/js/bootstrap.min.js"></script>
-
     <script src="../../assets/js/all.min.js"></script>
+    <script src="../components/subGroups.js" type="module"></script>
 </body>
 
 </html>
