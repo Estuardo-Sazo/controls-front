@@ -26,4 +26,6 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         lista.innerHTML = template;
     });
 
+
+
 });
