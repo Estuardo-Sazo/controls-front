@@ -1,10 +1,10 @@
 import General from '../genearl.js';
 
 
-export default class ModelSubGroups extends General {
+export default class ModelGastos extends General {
     constructor() {
         super();
-        this.url = 'sub-groups'
+        this.url = 'expenses'
     }
 
     getApi() {
