@@ -51,18 +51,14 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="group">Grupo</label>
-                                    <select class="form-control" id="group"> 
-                                        <option value="233432421">Educacion</option>
-                                        <option value="233432421">Hogar</option>
+                                    <select class="form-control" id="group">                                       
                                     </select>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label for="group">Sub Grupo</label>
-                                    <select class="form-control" id="group"> 
-                                        <option value="233432421">Universidad</option>
-                                        <option value="233432421">Casa</option>
+                                    <select class="form-control" id="subgroup">                                     
                                     </select>
                                 </div>
                             </div>
@@ -83,11 +79,12 @@
                                 <div class="form-group">
                                     <label for="group">Periodo</label>
                                     <select class="form-control" id="group"> 
-                                        <option value="233432421">Una vez</option>
-                                        <option value="233432421">Cada día</option>
-                                        <option value="233432421">Cada semana</option>
-                                        <option value="233432421">Cada Quincena</option>
-                                        <option value="233432421">Cada Mes</option>
+                                        <option value="0">Una vez</option>
+                                        <option value="1">Cada día</option>
+                                        <option value="7">Cada semana</option>
+                                        <option value="15">Cada Quincena</option>
+                                        <option value="30">Cada Mes</option>
+                                        
                                     </select>
                                 </div>
                             </div>
@@ -119,7 +116,7 @@
     <br /><br /><br /><br /><br />
     <div class="container">
         <div class="text-center"></div>Gastos</h3>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" id="lista">
             <div class="col-md-8 mt-2">
                 <div class="fondo-tabla p-1 pl-3 pr-3">
                     <h2 class="text-center title-card">Titulo Gasto</h2>
@@ -229,8 +226,9 @@
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/popper.min.js"></script>
     <script src="../../assets/js/bootstrap.min.js"></script>
-
     <script src="../../assets/js/all.min.js"></script>
+    <script src="../components/gastos.js" type="module"></script>
+
 </body>
 
 </html>

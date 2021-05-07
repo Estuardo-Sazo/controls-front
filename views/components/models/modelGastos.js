@@ -1,10 +1,10 @@
 import General from '../genearl.js';
 
 
-export default class ModelSubGroups extends General {
+export default class ModelGastos extends General {
     constructor() {
         super();
-        this.url = 'sub-groups/as'
+        this.url = 'expenses'
     }
 
     getApi() {
@@ -12,8 +12,7 @@ export default class ModelSubGroups extends General {
     }
 
     async getAll() {
-        console.log(this.getApi());
-        var r = await fetch(this.getApi(), {
+        var r = await fetch(this.getApi()+'/as', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

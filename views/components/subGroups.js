@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
 
                     <td>${d.name}</td>
                     <td>${d.description}</td>
-                    <td><button class="btn btn-primary btn-sm editar" uuid=${d.uuid}">Editar</button></td>
+                    <td><button class="btn btn-primary btn-sm editar" uuid="${d.uuid}">Editar</button></td>
                 </tr>
                 `;
             });
@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
     }
     
     const limpiar = () => {
+        $('#group').val('');
         $('#name').val('');
         $('#description').val('');
     }
@@ -52,13 +53,11 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         e.preventDefault();
 
         const datos = {
-            group: $('#group').val(),
-            
+            group: $('#group').val(),            
             name: $('#name').val(),
             description: $('#description').val()
         }
-        console.log(datos);
-        /*  model.setData(datos).then(r => {
+         model.setData(datos).then(r => {
             if (!r.error) {
                 list();
                 limpiar();
@@ -66,10 +65,10 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
             } else {
                 console.log(r.body);
             }
-        }); */
+        });
     });
     
-    // Laamar funcion lsitar
+    // Llamar funcion lsitar
     listGroup();
     list();
 });

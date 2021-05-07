@@ -4,6 +4,7 @@ import ModelGroups from './models/modelGroups.js';
 document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta renderizar todo el html*/
     const modelGroups = new ModelGroups();
     const lista = $('#lista');
+
     // Consulta de todo el listado de grupos
     const list = () => {
         modelGroups.getAll().then((result) => {
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
                 <tr>
                     <td>${d.name}</td>
                     <td>${d.description}</td>
-                    <td><button class="btn btn-primary btn-sm editar" uuid=${d.uuid}">Editar</button></td>
+                    <td><button class="btn btn-primary btn-sm editar" uuid="${d.uuid}">Editar</button></td>
                 </tr>
                 `;
             });
