@@ -49,9 +49,9 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
             name: $('#name').val(),
             description: $('#description').val()
         }
-        modelGroups.setData(datos).then(r => {
+        modelGroups.setData(datos).then(r => {  //setdata funcion logica de guardado de datos
             if (!r.error) {
-                list();
+                list();//consula de lista
                 limpiar();
                 $('#nuevoGrupo').modal('hide');
             } else {

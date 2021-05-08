@@ -9,18 +9,30 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
     const lista = $('#lista');
 
 
+    //editar SUBgrupo
+    function editar(id) {
+        console.log('editar',id);
+    }
+
+    //editar SUBgrupo
+    function eliminar(id) {
+        console.log('Eliminar',id);
+    }
     // Consulta de todo el listado de sub grupos
     const list = () => {
-        model.getAll().then((result) => {
-            let template = '';
+        model.getAll().then((result) => {  //llama la lista de datos de bd
+
+            let template = ''; 
             result.body.forEach(d => {
                 template += `
                 <tr>
                     <td>${d.group}</td>
-
                     <td>${d.name}</td>
                     <td>${d.description}</td>
-                    <td><button class="btn btn-primary btn-sm editar" uuid="${d.uuid}">Editar</button></td>
+                    <td>
+                    <button class="btn btn-primary btn-sm editar" uuid="${d.uuid}">Editar</button>
+                    <button class="btn btn-danger btn-sm editar" uuid="${d.uuid}">Eliminar</button>
+                    </td>
                 </tr>
                 `;
             });
@@ -36,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
     
      // Consulta de todo el listado de  grupos
      const listGroup = () => {
-        modelG.getAll().then((result) => {
+        modelG.getAll().then((result) => {  //conslta lista de grupos de bd
             let template = '';
             result.body.forEach(d => {
                 template += `
@@ -48,12 +60,12 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
     }
     
 
-    //Agregar un nuevo Sub grupo
+    //Guardar un nuevo Sub grupo
     $('#frm-subgroup').submit(function (e) {
         e.preventDefault();
 
         const datos = {
-            group: $('#group').val(),            
+            group: $('#group').val(),   //obtener los datos de id          
             name: $('#name').val(),
             description: $('#description').val()
         }
@@ -68,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         });
     });
     
-    // Llamar funcion lsitar
+    // Llamar funcion lisitar
     listGroup();
     list();
 });
