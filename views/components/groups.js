@@ -1,44 +1,50 @@
-import ModelGroups from './models/modelGroups.js';
+import ModelGroups from './models/modelGroups.js'; //importar archivo de logica
 
 
 document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta renderizar todo el html*/
     const modelGroups = new ModelGroups();
-    const lista = $('#lista');
+  //editar grupo
+    function editar(id) {
+        console.log('editar',id);
+    }
+
+    //editar grupo
+    function eliminar(id) {
+        console.log('Eliminar',id);
+    }
 
     // Consulta de todo el listado de grupos
     const list = () => {
         modelGroups.getAll().then((result) => {
             let template = '';
-            result.body.forEach(d => {
+            result.body.forEach(d => {// recorremos el resultado
                 template += `
                 <tr>
                     <td>${d.name}</td>
                     <td>${d.description}</td>
-                    <td><button class="btn btn-primary btn-sm editar" uuid="${d.uuid}">Editar</button></td>
+                    <td><button class="btn btn-primary btn-sm editar" uuid="${d.uuid}" onClick="editar(${d.uuid})">Editar</button> <button class="btn btn-danger btn-sm eliminar" uuid="${d.uuid}" onClick="eliminar(${d.uuid})">Eliminar</button></td>
                 </tr>
                 `;
             });
-            lista.html(template);
+            $('#lista').html(template);
         });
     }
     
     const limpiar = () => {
         $('#name').val('');
         $('#description').val('');
-     }
-    //editar grupo
-    const editar = (id) => {
-        console.log(id);
     }
+    
+   
 
-    // Laamar funcion lsitar
+    // Llamar funcion lsitar
     list();
 
 
 
     //Agregar un nuevo grupo
     $('#frm-grupo').submit(function(e) {
-        e.preventDefault();
+        e.preventDefault();/// evitar que recargue pagina
         const datos = {
             name: $('#name').val(),
             description: $('#description').val()
