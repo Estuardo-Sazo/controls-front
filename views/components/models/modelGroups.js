@@ -33,23 +33,23 @@ export default class ModelGroups extends General {
 
     async setData(data) {
         var r = await fetch(this.getApi(), {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body:JSON.stringify(data)
-        })
-        .then((response) => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error('Request failed!');
-        }, networkError => console.log(networkError.message))
-        .then((data) => {
-            return data
-        });
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data)
+            })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Request failed!');
+            }, networkError => console.log(networkError.message))
+            .then((data) => {
+                return data
+            });
 
-    return r;
+        return r;
     }
 
 }

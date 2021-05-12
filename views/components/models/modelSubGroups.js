@@ -12,7 +12,6 @@ export default class ModelSubGroups extends General {
     }
 
     async getAll() {
-        console.log(this.getApi());
         var r = await fetch(this.getApi(), {
                 method: "GET",
                 headers: {
@@ -33,7 +32,7 @@ export default class ModelSubGroups extends General {
     }
 
     async setData(data) {
-        
+
         var r = await fetch(this.getApi(), {
                 method: "POST",
                 headers: {

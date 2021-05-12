@@ -15,17 +15,20 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
                     <td>${d.name}</td>
                     <td>${d.description}</td>
                     <td><button class="btn btn-primary btn-sm editar" uuid="${d.uuid}">Editar</button></td>
-                </tr>
+                </tr>             
                 `;
             });
             lista.html(template);
+
         });
     }
-    
+
     const limpiar = () => {
         $('#name').val('');
         $('#description').val('');
-     }
+    }
+
+
     //editar grupo
     const editar = (id) => {
         console.log(id);
@@ -38,13 +41,14 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
 
     //Agregar un nuevo grupo
     $('#frm-grupo').submit(function(e) {
-        e.preventDefault();
-        const datos = {
+        e.preventDefault(); // evita recargue la pagina
+        const datos = { //secrea unobjeto
             name: $('#name').val(),
-            description: $('#description').val()
+            description: $('#description').val(),
         }
+
         modelGroups.setData(datos).then(r => {
-            if (!r.error) {
+            if (!r.error) { //analizo que no alla un error
                 list();
                 limpiar();
                 $('#nuevoGrupo').modal('hide');
