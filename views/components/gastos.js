@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         1: "Cada día",
         7: "Cada semana",
         15: "Cada Quincena",
-        30: ">Cada Mes",
+        30: "Cada Mes",
     }
 
     //Consulta de grupos
@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
     }
 
     // Consulta de todo el listado de sub grupos
-    const listSubGroup = () => {
-        modelSubGroups.getAll().then((result) => {
+    const listSubGroup = (id) => {
+        modelSubGroups.getForGroup(id).then((result) => {
             let template = '';
             result.body.forEach(d => {
                 template += `
@@ -50,17 +50,17 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
             let template = '';
             result.body.forEach(d => {
                 template += `
-                <div class="col-md-8 mt-2">
-                    <div class="fondo-tabla p-1 pl-3 pr-3">
+                <div class="col-md-7 mt-2">
+                    <div class="fondo-tabla p-2 pl-3 pr-3">
                         <h2 class="text-center title-card">${d.name}</h2>
                         <div class="row">
-                            <div class="col-8">
+                            <div class="col-7">
                                 <p class="m-0">Grupo: <strong>${d.group}</strong></p>
                                 <p class="m-0">Sub Grupo: <strong>${d.sub_group}</strong></p>
                                 <p class="m-0">Peridodo: <strong>${period[d.period]}</strong></p>
-                                <p class="m-0">Estado: <strong>${d.sub_group == 1 ? 'Activo':'Desactivado'}</strong></p>
+                                <p class="m-0">Estado: <strong>${d.status == 1 ? 'Activo':'Desactivado'}</strong></p>
                             </div>
-                            <div class="col-4 text-center">
+                            <div class="col-5 text-center">
                                 <h5>Monto:</h5>
                                 <h1 class="monto-card"><strong>Q${parseFloat(d.value).toFixed(2)}</strong></h1>
                             </div>
@@ -73,9 +73,40 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         });
     }
 
+    //Deteccion de grupo seleccionado
+    $('#group').change(function() {
+        console.log($('#group').val());
+        listSubGroup($('#group').val());
+    });
+
+    //Registrar nuevo gasto
+    $('#nuevoGasto').submit(function(e) {
+        e.preventDefault();
+        const data = {
+            group: $('#group').val(),
+            subgroup: $('#subgroup').val(),
+            name: $('#name').val(),
+            description: $('#description').val(),
+            period: $('#period').val(),
+            value: $('#value').val()
+        }
+
+        model.setData(data).then(r => { //setdata funcion logica de guardado de datos
+            if (!r.error) {
+                list(); //consula de lista
+
+                $('#nuevo').modal('hide');
+            } else {
+                console.log(r.body);
+            }
+        });
+    });
+
+
+
 
     //Llamado de funciones para
     list();
     listGroup();
-    listSubGroup();
+
 });
