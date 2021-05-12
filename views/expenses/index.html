@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gastos</title>
-     <!-- Bootstrap -->
-     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
-     <!-- Font Awesome iconos -->
-     <link rel="stylesheet" href="../../assets/css/all.min.css" />
-      <!-- estilos propios -->
-     <link rel="stylesheet" href="../../assets/css/styles.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+    <!-- Font Awesome iconos -->
+    <link rel="stylesheet" href="../../assets/css/all.min.css" />
+    <!-- estilos propios -->
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
 </head>
 
 <body class="fondo">
@@ -34,11 +34,11 @@
 
     <!-- Boton flotante -->
 
-    <a href="#" class="btn-flotante" data-toggle="modal" data-target="#nuevoGrupo">Nuevo Gasto</a>
+    <a href="#" class="btn-flotante" data-toggle="modal" data-target="#nuevo">Nuevo Gasto</a>
 
     <!-- MODAL Nuevo Grupos-->
     <!-- Modal -->
-    <div class="modal fade" id="nuevoGrupo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -48,7 +48,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                    <form action="" id="nuevoGasto">
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
@@ -80,7 +80,7 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="group">Periodo</label>
-                                    <select class="form-control" id="group"> 
+                                    <select class="form-control" id="period"> 
                                         <option value="0">Una vez</option>
                                         <option value="1">Cada día</option>
                                         <option value="7">Cada semana</option>
@@ -98,14 +98,14 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Q</span>
                                             </div>
-                                            <input type="number" class="form-control">
+                                            <input type="number" class="form-control" id="value">
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-primary text-center" type="submit">Guardar Sub grupo</button>
+                        <button class="btn btn-primary text-center" type="submit">Guardar Gasto</button>
                     </form>
                 </div>
 
@@ -136,91 +136,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 mt-2">
-                <div class="fondo-tabla p-1 pl-3 pr-3">
-                    <h2 class="text-center title-card">Titulo Gasto</h2>
-                    <div class="row">
-                        <div class="col-8">
-                            <p class="m-0">Grupo: <strong>Eduacion</strong></p>
-                            <p class="m-0">Sub Grupo: <strong>Universidad</strong></p>
-                            <p class="m-0">Peridodo: <strong>Cada Semana</strong></p>
-                            <p class="m-0">Estado: <strong>Activo</strong></p>
-                        </div>
-                        <div class="col-4 text-center">
-                            <h5>Monto:</h5>
-                            <h1 class="monto-card"><strong>Q30</strong></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8 mt-2">
-                <div class="fondo-tabla p-1 pl-3 pr-3">
-                    <h2 class="text-center title-card">Titulo Gasto</h2>
-                    <div class="row">
-                        <div class="col-8">
-                            <p class="m-0">Grupo: <strong>Eduacion</strong></p>
-                            <p class="m-0">Sub Grupo: <strong>Universidad</strong></p>
-                            <p class="m-0">Peridodo: <strong>Cada Semana</strong></p>
-                            <p class="m-0">Estado: <strong>Activo</strong></p>
-                        </div>
-                        <div class="col-4 text-center">
-                            <h5>Monto:</h5>
-                            <h1 class="monto-card"><strong>Q30</strong></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8 mt-2">
-                <div class="fondo-tabla p-1 pl-3 pr-3">
-                    <h2 class="text-center title-card">Titulo Gasto</h2>
-                    <div class="row">
-                        <div class="col-8">
-                            <p class="m-0">Grupo: <strong>Eduacion</strong></p>
-                            <p class="m-0">Sub Grupo: <strong>Universidad</strong></p>
-                            <p class="m-0">Peridodo: <strong>Cada Semana</strong></p>
-                            <p class="m-0">Estado: <strong>Activo</strong></p>
-                        </div>
-                        <div class="col-4 text-center">
-                            <h5>Monto:</h5>
-                            <h1 class="monto-card"><strong>Q30</strong></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8 mt-2">
-                <div class="fondo-tabla p-1 pl-3 pr-3">
-                    <h2 class="text-center title-card">Titulo Gasto</h2>
-                    <div class="row">
-                        <div class="col-8">
-                            <p class="m-0">Grupo: <strong>Eduacion</strong></p>
-                            <p class="m-0">Sub Grupo: <strong>Universidad</strong></p>
-                            <p class="m-0">Peridodo: <strong>Cada Semana</strong></p>
-                            <p class="m-0">Estado: <strong>Activo</strong></p>
-                        </div>
-                        <div class="col-4 text-center">
-                            <h5>Monto:</h5>
-                            <h1 class="monto-card"><strong>Q30</strong></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-8 mt-2">
-                <div class="fondo-tabla p-1 pl-3 pr-3">
-                    <h2 class="text-center title-card">Titulo Gasto</h2>
-                    <div class="row">
-                        <div class="col-8">
-                            <p class="m-0">Grupo: <strong>Eduacion</strong></p>
-                            <p class="m-0">Sub Grupo: <strong>Universidad</strong></p>
-                            <p class="m-0">Peridodo: <strong>Cada Semana</strong></p>
-                            <p class="m-0">Estado: <strong>Activo</strong></p>
-                        </div>
-                        <div class="col-4 text-center">
-                            <h5>Monto:</h5>
-                            <h1 class="monto-card"><strong>Q30</strong></h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
 
         </div>
     </div>
