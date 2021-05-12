@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
     const list = () => {
         model.getAll().then((result) => {
             let template = '';
-            console.log(result.body);
             result.body.forEach(d => {
                 template += `
                 <div class="col-md-7 mt-2">
