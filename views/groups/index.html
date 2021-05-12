@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grupos</title>
+     <!-- Bootstrap -->
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
-    <!-- Font Awesome -->
+    <!-- Font Awesome iconos -->
     <link rel="stylesheet" href="../../assets/css/all.min.css" />
+     <!-- estilos propios -->
     <link rel="stylesheet" href="../../assets/css/styles.css" />
 </head>
 
 <body class="fondo">
+    <!-- Menu de navegacion  -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <a class="navbar-brand" href="#">CONTROL APP</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,19 +27,18 @@
                 <a class="nav-link" href="../groups/">Grupos de gastos</a>
                 <a class="nav-link" href="../sub-groups/">Sub grupos de gastos</a>
                 <a class="nav-link" href="../expenses/">Gastos</a>
-
                 <a class="nav-link" href="#">Ingresos</a>
             </div>
         </div>
         </div>
     </nav>
+    <!--  Fin de Menu de navegacion  -->
 
     <!-- Boton flotante -->
-
     <a href="#" class="btn-flotante" data-toggle="modal" data-target="#nuevoGrupo">Nuevo grupo</a>
 
     <!-- MODAL Nuevo Grupos-->
-    <!-- Modal -->
+    <!--Formulario  Modal -->
     <div class="modal fade" id="nuevoGrupo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -47,9 +49,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-
                     <form id="frm-grupo">
-
                         <div class="form-group">
                             <label for="name">Nombre</label>
                             <input class="form-control" type="text" id="name" required>
@@ -59,13 +59,15 @@
                             <input class="form-control" type="text" id="description" required>
                         </div>
                         <button class="btn btn-primary text-center" type="submit">Guardar grupo</button>
+
+                        <button class="btn btn-warning text-center" type="reset">Limpiar</button>
                     </form>
                 </div>
 
             </div>
         </div>
     </div>
-
+<!-- Formulario Fin Modal -->
 
     <br /><br /><br /><br /><br />
     <div class="container">
