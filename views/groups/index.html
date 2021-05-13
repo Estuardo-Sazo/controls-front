@@ -12,27 +12,14 @@
     <link rel="stylesheet" href="../../assets/css/all.min.css" />
      <!-- estilos propios -->
     <link rel="stylesheet" href="../../assets/css/styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
 </head>
 
 <body class="fondo">
     <!-- Menu de navegacion  -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <a><img  class="im"src="../iconos/suministro.png" alt="" style="width: 50px;"></a>
-        <a class="navbar-brand" href="../index/">CONTROL APP</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" href="../index/">Inicio <span class="sr-only">(current)</span></a>
-                <a class="nav-link" href="../groups/">Grupos de gastos</a>
-                <a class="nav-link" href="../sub-groups/">Sub grupos de gastos</a>
-                <a class="nav-link" href="../expenses/">Gastos</a>
-                <a class="nav-link" href="../income/">Ingresos</a>
-            </div>
-        </div>
-        </div>
-    </nav>
+    <span id="Menu"></span>
+    <script src="../partials/nav.js"></script>
     <!--  Fin de Menu de navegacion  -->
 
     <!-- Boton flotante -->
@@ -60,6 +47,40 @@
                             <input class="form-control" type="text" id="description" required>
                         </div>
                         <button class="btn btn-primary text-center" type="submit">Guardar grupo</button>
+
+                        <button class="btn btn-warning text-center" type="reset">Limpiar</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!-- Formulario Fin Modal -->
+
+<!-- MODAL Editar Grupos-->
+    <!--Formulario  Modal -->
+    <div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Grupo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="frm-editar">
+                        <input class="form-control" type="hidden" id="id" >
+
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input class="form-control" type="text" id="na" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descripcion</label>
+                            <input class="form-control" type="text" id="des" required>
+                        </div>
+                        <button class="btn btn-primary text-center" type="submit">Actualizar</button>
 
                         <button class="btn btn-warning text-center" type="reset">Limpiar</button>
                     </form>
@@ -103,10 +124,13 @@
         </div>
     </div>
 
-    <script src="../../assets/js/jquery.min.js"></script>
-    <script src="../../assets/js/popper.min.js"></script>
-    <script src="../../assets/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/all.min.js"></script>
+     <!-- SCrips -->
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/popper.min.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+     <!-- Fin scrips -->
     <script src="../components/groups.js" type="module"></script>
 
 </body>

@@ -30,10 +30,69 @@ export default class ModelGroups extends General {
 
         return r;
     }
+    async get(id) {
+        var r = await fetch(this.getApi()+'/'+id, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Request failed!');
+            }, networkError => console.log(networkError.message))
+            .then((data) => {
+                return data
+            });
+
+        return r;
+    }
+
+    async delete(id) {
+        var r = await fetch(this.getApi()+'/'+id, {
+                method: "delete",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Request failed!');
+            }, networkError => console.log(networkError.message))
+            .then((data) => {
+                return data
+            });
+
+        return r;
+    }
 
     async setData(data) {
         var r = await fetch(this.getApi(), {
                 method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data)
+            })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Request failed!');
+            }, networkError => console.log(networkError.message))
+            .then((data) => {
+                return data
+            });
+
+        return r;
+    }
+    async putData(data) {
+        var r = await fetch(this.getApi(), {
+                method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                 },
