@@ -31,6 +31,14 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         });
     }
 
+
+    const limpiar = () => {
+        $('#name').val('');
+        $('#periodo').val('');
+        $('#value').val('');
+       
+
+    }
     //Registrar nuevo 
     $('#nuevo').submit(function(e) {
         e.preventDefault();
@@ -43,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         model.setData(data).then(r => { //setdata funcion logica de guardado de datos
             if (!r.error) {
                 list(); //consula de lista
-
+                limpiar();
+                $('#nuevo').modal('hide');
                 $('#modal').modal('hide');
             } else {
                 console.log(r.body);
