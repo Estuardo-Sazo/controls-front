@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
                                 <p class="m-0">Sub Grupo: <strong>${d.sub_group}</strong></p>
                                 <p class="m-0">Peridodo: <strong>${period[d.period]}</strong></p>
                                 <p class="m-0">Estado: <strong>${d.status == 1 ? 'Activo':'Desactivado'}</strong></p>
+                                <p> <button class="btn btn-primary btn-sm editar" >Edit</button>  <button class="btn btn-danger btn-sm editar" >Eliminar</button> </p>
                             </div>
                             <div class="col-5 text-center">
                                 <h5>Monto:</h5>

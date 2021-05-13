@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingresos</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+    <!-- Font Awesome iconos -->
+    <link rel="stylesheet" href="../../assets/css/all.min.css" />
+    <!-- estilos propios -->
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
+</head>
+
+<body class="fondo">
+    <!-- Menu de navegacion  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <a><img class="im" src="../iconos/suministro.png" alt="" style="width: 50px;"></a>
+        <a class="navbar-brand" href="../index/">CONTROL APP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="../index/">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../groups/">Grupos de gastos</a>
+                <a class="nav-link" href="../sub-groups/">Sub grupos de gastos</a>
+                <a class="nav-link" href="../expenses/">Gastos</a>
+                <a class="nav-link" href="../income/">Ingresos</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!--  Fin de Menu de navegacion  -->
+
+    <!-- Boton flotante -->
+    <a href="#" class="btn-flotante" data-toggle="modal" data-target="#nuevoGrupo">Nuevo Ingreso</a>
+
+    <!-- MODAL Nuevo Grupos-->
+    <!--Formulario  Modal -->
+    <div class="modal fade" id="nuevoGrupo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Ingreso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="frm-grupo">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input class="form-control" type="text" id="name" required>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="group">Periodo</label>
+                                    <select class="form-control" id="period"> 
+                                        <option value="0">Una vez</option>
+                                        <option value="1">Cada día</option>
+                                        <option value="7">Cada semana</option>
+                                        <option value="15">Cada Quincena</option>
+                                        <option value="30">Cada Mes</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label class="control-label">Monto</label>
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Q</span>
+                                            </div>
+                                            <input type="number" class="form-control" id="value">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary text-center" type="submit">Guardar Ingreso</button>
+
+                        <button class="btn btn-warning text-center" type="reset">Limpiar</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Formulario Fin Modal -->
+
+    <br /><br /><br /><br /><br />
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+
+                <h2 class="text-center bg-primary text-white p-2  fondo-tabla" style="border-radius:10px;">Catalogo de Ingresos</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="fondo-tabla p-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Valor</th>
+                                <th scope="col">Perido</th>
+                                <th scope="col"></th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="lista">
+
+                        </tbody>
+                    </table>
+                    <div id="datos">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/all.min.js"></script>
+    <script src="../components/incomes.js" type="module"></script>
+
+</body>
+
+</html>
