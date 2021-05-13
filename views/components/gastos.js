@@ -80,7 +80,17 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         listSubGroup($('#group').val());
     });
 
-    //Registrar nuevo gasto
+
+    const limpiar = () => {
+            $('#group').val('');
+            $('#name').val('');
+            $('#description').val('');
+            $('#subgroup').val('');
+            $('#period').val('');
+            $('#value').val('');
+
+        }
+        //Registrar nuevo gasto
     $('#nuevoGasto').submit(function(e) {
         e.preventDefault();
         const data = {
@@ -95,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         model.setData(data).then(r => { //setdata funcion logica de guardado de datos
             if (!r.error) {
                 list(); //consula de lista
-
+                limpiar();
                 $('#nuevo').modal('hide');
             } else {
                 console.log(r.body);
