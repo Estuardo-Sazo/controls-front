@@ -90,6 +90,7 @@ export default class ModelGroups extends General {
 
         return r;
     }
+    
     async putData(data) {
         var r = await fetch(this.getApi(), {
                 method: "PUT",

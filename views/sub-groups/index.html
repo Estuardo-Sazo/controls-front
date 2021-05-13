@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../../assets/css/all.min.css" />
     <!-- estilos propios -->
     <link rel="stylesheet" href="../../assets/css/styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
 </head>
 
 <body class="fondo">
@@ -24,7 +26,7 @@
 
     <a href="#" class="btn-flotante" data-toggle="modal" data-target="#Modal">Nuevo Subgrupo</a>
 
-    <!-- MODAL Nuevo Grupos-->
+    <!-- MODAL Nuevo sub  Grupos-->
     <!-- Modal -->
     <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -59,6 +61,41 @@
         </div>
     </div>
 
+     <!-- MODAL Nuevo sub  Grupos-->
+    <!-- Modal -->
+    <div class="modal fade" id="ModalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Sub Grupo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="frm-editar">
+                        <input type="hidden" name="id" id="id">
+                        <div class="form-group">
+                            <label for="group">Grupo</label>
+                            <select class="form-control" id="g"> 
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input class="form-control" type="text" id="na">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descripcion</label>
+                            <input class="form-control" type="text" id="des">
+                        </div>
+                        <button class="btn btn-primary text-center" type="submit">Guardar Sub grupo</button>
+                        <button class="btn btn-warning text-center" type="reset">Limpiar</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- ---------- -->
     <br /><br /><br /><br /><br />
@@ -99,6 +136,8 @@
 <script src="../../assets/js/popper.min.js"></script>
 <script src="../../assets/js/bootstrap.min.js"></script>
 <script src="../../assets/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+
      <!-- Fin scrips -->
     <script src="../components/subGroups.js" type="module"></script>
 </body>

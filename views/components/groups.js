@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let element = $(this)[0].parentElement.parentElement;
     let uuid = $(element).attr("uuid");
     $.confirm({
-      title: "¿Estas seguro de elimiar?",
+      title: "¿Estas seguro de eliminar?",
       content: "Perderan todos los regitros realcionados.",
       type: "red",
       buttons: {
@@ -37,10 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let element = $(this)[0].parentElement.parentElement;
     let uuid = $(element).attr("uuid");
     modelGroups.get(uuid).then((result) => {
-      //consulta  datos
-      let template = "";
       result.body.forEach((d) => {
-        // recorremos el resultado
         $("#id").val(d.uuid);
         $("#na").val(d.name);
         $("#des").val(d.description);
