@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
 
     // Consulta de todo el listado de grupos
     const list = () => {
-        modelGroups.getAll().then((result) => {
+        modelGroups.getAll().then((result) => {//consulta  datos
             let template = '';
             result.body.forEach(d => { // recorremos el resultado
                 template += `
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         }
         modelGroups.setData(datos).then(r => { //setdata funcion logica de guardado de datos
             if (!r.error) {
-                list(); //consula de lista
+                list(); //consula de lista recargar 
                 limpiar();
                 $('#nuevoGrupo').modal('hide');
             } else {

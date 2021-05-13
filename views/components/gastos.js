@@ -15,13 +15,14 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         7: "Cada semana",
         15: "Cada Quincena",
         30: "Cada Mes",
+        365: "año",
     }
 
     //Consulta de grupos
     const listGroup = () => {
-        modelGroups.getAll().then((result) => {
-            let template = '';
-            result.body.forEach(d => {
+        modelGroups.getAll().then((result) => {  //consulta datos 
+            let template = '';  // variable que guarda momentaneamente los datos asta que se inserten       
+            result.body.forEach(d => {// es un bucle que repite la lista
                 template += `
                 <option value="${d.uuid}">${d.name}</option>
 
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
     }
 
     // Consulta de todo el listado de sub grupos
-    const listSubGroup = (id) => {
+    const listSubGroup = (id) => { // consulta los grupos segun el ID
         modelSubGroups.getForGroup(id).then((result) => {
             let template = '';
             result.body.forEach(d => {
@@ -48,7 +49,10 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
     const list = () => {
         model.getAll().then((result) => {
             let template = '';
-            result.body.forEach(d => {
+            result.body.forEach(d => { 
+                
+                
+                //targetas de gastos
                 template += `
                 <div class="col-md-7 mt-2">
                     <div class="fondo-tabla p-2 pl-3 pr-3">
@@ -75,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
     }
 
     //Deteccion de grupo seleccionado
-    $('#group').change(function() {
+    $('#group').change(function() {  // al seleccionar llama las relaciones que hay entre grupos y sub grupos
         console.log($('#group').val());
         listSubGroup($('#group').val());
     });
