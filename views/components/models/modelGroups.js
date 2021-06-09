@@ -31,7 +31,7 @@ export default class ModelGroups extends General {
         return r;
     }
     async get(id) {
-        var r = await fetch(this.getApi()+'/'+id, {
+        var r = await fetch(this.getApi() + '/' + id, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -51,7 +51,7 @@ export default class ModelGroups extends General {
     }
 
     async delete(id) {
-        var r = await fetch(this.getApi()+'/'+id, {
+        var r = await fetch(this.getApi() + '/' + id, {
                 method: "delete",
                 headers: {
                     "Content-Type": "application/json",
@@ -90,7 +90,7 @@ export default class ModelGroups extends General {
 
         return r;
     }
-    
+
     async putData(data) {
         var r = await fetch(this.getApi(), {
                 method: "PUT",
