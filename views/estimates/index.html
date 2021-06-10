@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grupos</title>
+     <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+    <!-- Font Awesome iconos -->
+    <link rel="stylesheet" href="../../assets/css/all.min.css" />
+     <!-- estilos propios -->
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
+</head>
+
+<body class="fondo">
+    <!-- Menu de navegacion  -->
+    <span id="Menu"></span>
+    <script src="../partials/nav.js"></script>
+    <!--  Fin de Menu de navegacion  -->
+
+    <!-- Boton flotante -->
+    <a href="#" class="btn-flotante" data-toggle="modal" data-target="#nuevo">Agregar Nuevo</a>
+
+    <!-- MODAL Nuevo Grupos-->
+    <!--Formulario  Modal -->
+    <div class="modal fade" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Presupuesto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="frm-nuevo">
+                        <div class="form-group">
+                            <label for="name">Descripcion</label>
+                            <input class="form-control" type="text" id="description" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Fecha Inicio</label>
+                            <input class="form-control" type="date" id="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Fecha Fin</label>
+                            <input class="form-control" type="date" id="date1" required>
+                        </div>
+                        <button class="btn btn-primary text-center" type="submit">Guardar presupuesto </button>
+
+                        <button class="btn btn-warning text-center" type="reset">Limpiar</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!-- Formulario Fin Modal -->
+
+<!-- MODAL Editar Grupos-->
+    <!--Formulario  Modal -->
+    <div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Grupo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="frm-editar">
+                        <input class="form-control" type="hidden" id="id" >
+
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input class="form-control" type="text" id="na" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descripcion</label>
+                            <input class="form-control" type="text" id="des" required>
+                        </div>
+                        <button class="btn btn-primary text-center" type="submit">Actualizar</button>
+
+                        <button class="btn btn-warning text-center" type="reset">Limpiar</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!-- Formulario Fin Modal -->
+
+    <br /><br /><br /><br /><br />
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+
+                <h2 class="text-center bg-primary text-white p-2  fondo-tabla" style="border-radius:10px;" >Presupuestos</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="fondo-tabla p-3">
+
+                    <!-- Tabla Para la lista de Grupos -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Cod.</th>
+                                <th scope="col">Descripción</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Estimado</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="lista">
+
+                        </tbody>
+                    </table>
+                    <div id="datos">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- SCrips -->
+<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/popper.min.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
+<script src="../../assets/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+<script src="http://momentjs.com/downloads/moment.min.js"></script>
+
+     <!-- Fin scrips -->
+    <script src="../components/estimate.js" type="module"></script>
+
+</body>
+
+</html>

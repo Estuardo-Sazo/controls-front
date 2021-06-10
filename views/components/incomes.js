@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
             let template = '';
             result.body.forEach(d => {
                 template += `
-                <tr>
+                <tr uuid="${d.uuid}">
                 <td>${d.name}</td>
                 <td>Q${d.value}</td>
                 <td> <strong>${period[d.period]}</strong></td>
-                <td><button class="btn btn-primary btn-sm editar" uuid="${d.uuid}" onClick="editar(${d.uuid})">Editar</button> <button class="btn btn-danger btn-sm eliminar" uuid="${d.uuid}" onClick="eliminar(${d.uuid})">Eliminar</button></td>
+                <td><button class="btn btn-primary btn-sm editar" >Editar</button> <button class="btn btn-danger btn-sm eliminar" >Eliminar</button></td>
             </tr>
                 `;
             });
@@ -62,6 +62,33 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         });
     });
 
+     //Eliminar  -- funccion que detecta cuando se preciona el btn Elimiar
+     $(document).on("click", ".eliminar", function() {
+        let element = $(this)[0].parentElement.parentElement;
+        let uuid = $(element).attr("uuid");
+        $.confirm({
+            title: "¿Estas seguro de eliminar?",
+            content: "Perderan todos los regitros realcionados.",
+            type: "red",
+            buttons: {
+                confirm: {
+                    text: "Continuar",
+                    btnClass: "btn-red",
+                    action: function() {
+                        model.delete(uuid).then((result) => {
+
+                            list(); //consula de lista recargar
+                        });
+                    },
+                },
+                cancel: {
+                    text: "Cancelar",
+                    btnClass: "btn-blue",
+                    action: function() {},
+                },
+            },
+        });
+    });
 
     //Llamado de funciones
     list();

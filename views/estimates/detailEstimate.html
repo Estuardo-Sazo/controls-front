@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles Presupuesto</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+    <!-- Font Awesome iconos -->
+    <link rel="stylesheet" href="../../assets/css/all.min.css" />
+    <!-- estilos propios -->
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
+
+</head>
+
+<body class="fondo">
+    <!-- Menu de navegacion  -->
+    <span id="Menu"></span>
+    <script src="../partials/nav.js"></script>
+    <!--  Fin de Menu de navegacion  -->
+
+    <br><br><br><br><br>
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <h1 class="text-center bg-primary text-white p-2  fondo-tabla" style="border-radius:10px;">Detalles Presupuesto</h1>
+            </div>
+        </div>
+       
+        
+
+        <div class="row mt-3 fondo-tabla p-2">
+            
+            <div class="col-md-9">
+                <h2 class="text-center">Analisis de datos</h2>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <h3>Total de Gastos: Q<span id="totalG"></span></h3>
+                        <h3>Total de Ingresos: Q<span id="totalI"></span></h3>
+                    </div>
+                    <div class="col-6">
+                        <h2>Saldo: <span id="saldo"></span></h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p>Lista de Ingresos</p>
+                        <table class="table table-light">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Ingreso</th>
+                                    <th>Valor</th>
+        
+                                    <th>Periodo</th>
+        
+                                </tr>
+                            </thead>
+                            <tbody id="ingresos">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-6">
+                        <p>Lista de Gastos</p>
+                        <table class="table table-light">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Gasto</th>
+                                    <th>Valor</th>
+        
+                                    <th>Periodo</th>
+        
+                                </tr>
+                            </thead>
+                            <tbody id="gastos">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCrips -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+    <script src="../../assets/js/all.min.js"></script>
+    <!-- Fin scrips -->
+
+    <script src="../components/detailEstimate.js" type="module"></script>
+</body>
+
+</html>
