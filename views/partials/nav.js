@@ -13,6 +13,8 @@ let nav = `
             <a class="nav-link" href="../sub-groups/">Sub grupos de gastos</a>
             <a class="nav-link" href="../expenses/">Gastos</a>
             <a class="nav-link" href="../income/">Ingresos</a>
+            <a class="nav-link" href="../estimates/">Presupuesto</a>
+
         </div>
     </div>
     </div>
