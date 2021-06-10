@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
     <!-- Font Awesome iconos -->
     <link rel="stylesheet" href="../../assets/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
     <!-- estilos propios -->
     <link rel="stylesheet" href="../../assets/css/styles.css" />
+
 </head>
 
 <body class="fondo">
@@ -57,12 +60,16 @@
 
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input class="form-control " type="text" id="name">
+                            <input class="form-control " type="text" id="name" required>
                         </div>
 
                         <div class="form-group">
                             <label for="description">Descripcion</label>
-                            <input class="form-control" type="text" id="description">
+                            <input class="form-control" type="text" id="description" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Fecha</label>
+                            <input class="form-control" type="date" id="date" required>
                         </div>
                         <div class="row">
                             <div class="col">
@@ -118,12 +125,14 @@
         </div>
     </div>
 
-        <!-- SCrips -->
-<script src="../../assets/js/jquery.min.js"></script>
-<script src="../../assets/js/popper.min.js"></script>
-<script src="../../assets/js/bootstrap.min.js"></script>
-<script src="../../assets/js/all.min.js"></script>
-     <!-- Fin scrips -->
+    <!-- SCrips -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+
+    <!-- Fin scrips -->
     <script src="../components/gastos.js" type="module"></script>
 
 </body>

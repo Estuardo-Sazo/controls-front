@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
     const model = new ModelGastos();
     const modelGroups = new ModelGroups();
     const modelSubGroups = new ModelSubGroups();
-
+    var f = new Date();
 
     const lista = $('#lista');
     const period = {
@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
 
     //Consulta de grupos
     const listGroup = () => {
-        modelGroups.getAll().then((result) => {  //consulta datos 
-            let template = '';  // variable que guarda momentaneamente los datos asta que se inserten       
-            result.body.forEach(d => {// es un bucle que repite la lista
+        modelGroups.getAll().then((result) => { //consulta datos 
+            let template = ''; // variable que guarda momentaneamente los datos asta que se inserten       
+            result.body.forEach(d => { // es un bucle que repite la lista
                 template += `
                 <option value="${d.uuid}">${d.name}</option>
 
@@ -49,21 +49,21 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
     const list = () => {
         model.getAll().then((result) => {
             let template = '';
-            result.body.forEach(d => { 
-                
-                
+            result.body.forEach(d => {
+
                 //targetas de gastos
                 template += `
                 <div class="col-md-7 mt-2">
                     <div class="fondo-tabla p-2 pl-3 pr-3">
                         <h2 class="text-center title-card">${d.name}</h2>
                         <div class="row">
-                            <div class="col-7">
+                            <div class="col-7" uuid="${d.uuid}">
                                 <p class="m-0">Grupo: <strong>${d.group}</strong></p>
                                 <p class="m-0">Sub Grupo: <strong>${d.sub_group}</strong></p>
                                 <p class="m-0">Peridodo: <strong>${period[d.period]}</strong></p>
-                                <p class="m-0">Estado: <strong>${d.status == 1 ? 'Activo':'Desactivado'}</strong></p>
-                                <p> <button class="btn btn-primary btn-sm editar" >Editar</button>  <button class="btn btn-danger btn-sm editar" >Eliminar</button> </p>
+                                <p class="m-0">Fecha: <strong>${d.date}</strong></p>
+
+                                <p> <button class="btn btn-primary btn-sm editar" >Editar</button>  <button class="btn btn-danger btn-sm eliminar" >Eliminar</button> </p>
                             </div>
                             <div class="col-5 text-center">
                                 <h5>Monto:</h5>
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
     }
 
     //Deteccion de grupo seleccionado
-    $('#group').change(function() {  // al seleccionar llama las relaciones que hay entre grupos y sub grupos
+    $('#group').change(function() { // al seleccionar llama las relaciones que hay entre grupos y sub grupos
         console.log($('#group').val());
         listSubGroup($('#group').val());
     });
@@ -103,7 +103,9 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
             name: $('#name').val(),
             description: $('#description').val(),
             period: $('#period').val(),
+            date: $('#date').val(),
             value: $('#value').val()
+
         }
 
         model.setData(data).then(r => { //setdata funcion logica de guardado de datos
@@ -114,6 +116,36 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
             } else {
                 console.log(r.body);
             }
+        });
+    });
+
+    //Eliminar grupo -- funccion que detecta cuando se preciona el btn Elimiar
+    $(document).on("click", ".eliminar", function() {
+        let element = $(this)[0].parentElement.parentElement;
+        let uuid = $(element).attr("uuid");
+        console.log(uuid);
+
+        $.confirm({
+            title: "¿Estas seguro de eliminar?",
+            content: "Perderan todos los regitros realcionados.",
+            type: "red",
+            buttons: {
+                confirm: {
+                    text: "Continuar",
+                    btnClass: "btn-red",
+                    action: function() {
+                        model.delete(uuid).then((result) => {
+
+                            list(); //consula de lista recargar
+                        });
+                    },
+                },
+                cancel: {
+                    text: "Cancelar",
+                    btnClass: "btn-blue",
+                    action: function() {},
+                },
+            },
         });
     });
 

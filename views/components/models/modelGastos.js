@@ -12,7 +12,7 @@ export default class ModelGastos extends General {
     }
 
     async getAll() {
-        var r = await fetch(this.getApi()+'/as', {
+        var r = await fetch(this.getApi() + '/as', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export default class ModelGastos extends General {
     }
 
     async setData(data) {
-        
+
         var r = await fetch(this.getApi(), {
                 method: "POST",
                 headers: {
@@ -52,5 +52,26 @@ export default class ModelGastos extends General {
 
         return r;
     }
+
+    async delete(id) {
+        var r = await fetch(this.getApi() + '/' + id, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Request failed!');
+            }, networkError => console.log(networkError.message))
+            .then((data) => {
+                return data
+            });
+
+        return r;
+    }
+
 
 }

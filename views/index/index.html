@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../../assets/css/all.min.css" />
     <!-- estilos propios -->
     <link rel="stylesheet" href="../../assets/css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+
 
 </head>
 
@@ -26,13 +28,12 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
 
-                <h1 class="text-center bg-primary text-white p-2  fondo-tabla" style="border-radius:10px;" >Aplicacion de Control de Gastos</h1>
+                <h1 class="text-center bg-primary text-white p-2  fondo-tabla" style="border-radius:10px;">Aplicacion de Control de Gastos</h1>
             </div>
         </div>
-        <div class="row " >
+        <div class="row ">
 
-            
-            <div class="col-md-6 col-lg-4 mt-2">
+            <div class="col-md-6 col-lg-3 mt-2">
                 <a class="link-none" href="../groups/">
                     <div class="card">
                         <div class="card-body">
@@ -44,7 +45,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-6 col-lg-4 mt-2">
+            <div class="col-md-6 col-lg-3 mt-2">
                 <a class="link-none" href="../sub-groups/">
                     <div class="card">
                         <div class="card-body">
@@ -56,7 +57,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-6 col-lg-4 mt-2">
+            <div class="col-md-6 col-lg-3 mt-2">
                 <a class="link-none" href="../expenses/">
                     <div class="card">
                         <div class="card-body">
@@ -69,7 +70,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-6 col-lg-4 mt-2">
+            <div class="col-md-6 col-lg-3 mt-2">
                 <a class="link-none" href="../income/">
                     <div class="card">
                         <div class="card-body">
@@ -78,19 +79,97 @@
                                 <span class="icon-card"> <img src="../iconos/grupo-de-usuario.png" alt="" style="width: 50px;"></span>
                             </h6>
                         </div>
-                        
+
                     </div>
                 </a>
             </div>
         </div>
+
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-6">
+
+                <h1 class="text-center bg-primary text-white p-2  fondo-tabla" style="border-radius:10px;">Analisis de datos reales</h1>
+            </div>
+        </div>
+
+        <div class="row mt-3 fondo-tabla p-2">
+            <div class="col-md-3 p-3">
+                <form id="evaluar">
+                    <div class="form-group">
+                        <label for="description">Fecha de inicio</label>
+                        <input class="form-control" type="date" id="dateI" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Fecha de Fin</label>
+                        <input class="form-control" type="date" id="dateF" required>
+                    </div>
+                    <button class="btn btn-info btn-block text-center" type="submit">Evaluar datos</button>
+
+                </form>
+            </div>
+            <div class="col-md-9">
+                <h2 class="text-center">Analisis de datos</h2>
+                <br>
+                <div class="row">
+                    <div class="col-6">
+                        <h3>Total de Gastos: Q<span id="totalG"></span></h3>
+                        <h3>Total de Ingresos: Q<span id="totalI"></span></h3>
+                    </div>
+                    <div class="col-6">
+                        <h2>Saldo: <span id="saldo"></span></h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p>Lista de Ingresos</p>
+                        <table class="table table-light">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Ingreso</th>
+                                    <th>Valor</th>
+        
+                                    <th>Periodo</th>
+        
+                                </tr>
+                            </thead>
+                            <tbody id="ingresos">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-6">
+                        <p>Lista de Gastos</p>
+                        <table class="table table-light">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Gasto</th>
+                                    <th>Valor</th>
+        
+                                    <th>Periodo</th>
+        
+                                </tr>
+                            </thead>
+                            <tbody id="gastos">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-      <!-- SCrips -->
-<script src="../../assets/js/jquery.min.js"></script>
-<script src="../../assets/js/popper.min.js"></script>
-<script src="../../assets/js/bootstrap.min.js"></script>
-<script src="../../assets/js/all.min.js"></script>
-     <!-- Fin scrips -->
+    <!-- SCrips -->
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+    <script src="../../assets/js/all.min.js"></script>
+    <!-- Fin scrips -->
+
+    <script src="../components/index.js" type="module"></script>
 </body>
 
 </html>

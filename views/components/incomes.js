@@ -45,7 +45,9 @@ document.addEventListener('DOMContentLoaded', () => { /* Ejecuta js hasta render
         const data = {
             name: $('#name').val(),
             period: $('#period').val(),
-            value: $('#value').val()
+            value: $('#value').val(),
+            date: $('#date').val(),
+
         }
 
         model.setData(data).then(r => { //setdata funcion logica de guardado de datos
